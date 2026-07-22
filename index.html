@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter x Hunter 念の系統図マッピング</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Nen Type Mapping</h1>
+            <p>画像をアップロードして、好きな系統の場所に配置しよう</p>
+            <div>
+                <label for="imageUpload" class="upload-btn">
+                    <span>画像を追加</span>
+                    <input type="file" id="imageUpload" accept="image/*" multiple>
+                </label>
+                <button id="copyBtn" class="upload-btn" style="margin-left: 1rem; font-family: inherit; font-size: inherit;">
+                    <span>画像をコピー</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div id="captureArea" class="capture-area">
+                <div class="chart-container" id="chartContainer">
+                <svg class="hexagon-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" class="hexagon" />
+                    <!-- Lines from center -->
+                    <line x1="50" y1="50" x2="50" y2="5" class="hex-line" />
+                    <line x1="50" y1="50" x2="95" y2="27.5" class="hex-line" />
+                    <line x1="50" y1="50" x2="95" y2="72.5" class="hex-line" />
+                    <line x1="50" y1="50" x2="50" y2="95" class="hex-line" />
+                    <line x1="50" y1="50" x2="5" y2="72.5" class="hex-line" />
+                    <line x1="50" y1="50" x2="5" y2="27.5" class="hex-line" />
+                </svg>
+
+                <div class="label label-enhancement">強化系</div>
+                <div class="label label-emission">放出系</div>
+                <div class="label label-manipulation">操作系</div>
+                <div class="label label-specialization">特質系</div>
+                <div class="label label-conjuration">具現化系</div>
+                <div class="label label-transmutation">変化系</div>
+
+                <div class="drag-layer" id="dragLayer">
+                    <!-- Draggable images will be appended here -->
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
